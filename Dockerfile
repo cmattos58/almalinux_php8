@@ -15,17 +15,17 @@ WORKDIR /var/www/html
 
 #COPY index.php /var/www/html/
 #COPY phpinfo.php /var/www/html/
-COPY  html/site /var/www/html/site
-COPY  html/sophia /var/www/html/sophia
+#COPY  html/site /var/www/html/
+#COPY  html/sophia /var/www/html/
 COPY supervisord.conf /etc/
-COPY php.ini    /etc/
+#COPY php.ini    /etc/
 
 #CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 #CMD ["/usr/sbin/php-fpm","-F","-R"]
 
-CMD ["/usr/bin/supervisord", "-c" , "/etc/supervisord.conf"]
+#CMD ["/usr/bin/supervisord", "-c" , "/etc/supervisord.conf"]
 
-#CMD ["/usr/bin/supervisord"] 
+CMD ["/usr/bin/supervisord"] 
 
 EXPOSE 80
 EXPOSE 443
